@@ -1,4 +1,5 @@
-// import { Component } from "./core/Component";
+import { Component } from "./core/Component";
+import template from "./testapp.template.hbs";
 // import template from "./app.template.hbs";
 // import { ROUTES } from "./constants/routes";
 
@@ -6,9 +7,9 @@
 // import { useToastNotification } from "./hooks/useToastNotification";
 // import { useUserStore } from "./hooks/useUserStore";
 
-// import "./core/Router";
+import "./core/Router";
 
-// import "./pages/home/home.component";
+import "./pages/home/home.component";
 // import "./pages/not-found/not-found.component";
 // import "./pages/board/board.component";
 // import "./pages/dashboard/dashboard.component";
@@ -23,16 +24,19 @@
 // import "./components/create-board-form/create-board-form-components";
 // import "./components/task-card/task-card.component";
 
-// export class App extends Component {
-//   constructor() {
-//     super();
-//     this.template = template({
+export class App extends Component {
+  constructor() {
+    super();
+    this.template = template(
+    // {
 //       routes: ROUTES,
-//     });
-//     this.state = {
+//     }
+    );
+    this.state = {
+      
 //       isLoading: false,
-//     };
-//   }
+    };
+  }
 
 //   toggleIsLoading = () => {
 //     this.setState({
@@ -62,6 +66,6 @@
 //   componentDidMount() {
 //     this.initializeApp();
 //   }
-// }
+}
 
-// customElements.define("my-app", App);
+customElements.define("my-app", App);

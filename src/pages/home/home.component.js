@@ -1,16 +1,16 @@
-// import { Component } from "../../core/Component";
-// import template from "./home.template.hbs";
+import { Component } from "../../core/Component";
+import template from "./home.template.hbs";
 // import { ROUTES } from "../../constants/routes";
 
-// import "../../components/router-link/router-link.component";
+import "../../components/router-link/router-link.component";
 // import { store } from "../../store/Store";
 // import { useUserStore } from "../../hooks/useUserStore";
 
-// export class HomePage extends Component {
-//   constructor() {
-//     super();
-//     this.template = template();
-//     this.state = {
+export class HomePage extends Component {
+  constructor() {
+    super();
+    this.template = template();
+    this.state = {
 //       links: [
 //         {
 //           label: "Sign In",
@@ -21,8 +21,8 @@
 //           href: ROUTES.signUp,
 //         },
 //       ],
-//     };
-//   }
+    };
+  }
 
 //   setLinks = () => {
 //     const { getUser } = useUserStore();
@@ -41,6 +41,6 @@
 //   componentDidMount() {
 //     this.setLinks();
 //   }
-// }
+}
 
-// customElements.define("home-page", HomePage);
+customElements.define("home-page", HomePage);
