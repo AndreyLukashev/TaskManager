@@ -1,5 +1,5 @@
 import { Component } from "./core/Component";
-import template from "./app.template.hbs";
+import template from "./app.template.hbs";// импортируем функцию тимплэйт из верстки
 // import { ROUTES } from "./constants/routes";
 
 // import "./core/Router";

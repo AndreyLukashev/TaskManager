@@ -19,12 +19,12 @@ export class Component extends HTMLElement { //базовый компонент
     this.innerHTML = template(this.state);//отрисовываем новую разметку
   }
 
-  connectedCallback() {// метод вызываемый при появлении элемента на странице
+  connectedCallback() {//браузерный метод вызываемый при появлении элемента в дом дереве на странице
     this.compile();// вызываем компайл функцию
     this.componentDidMount()
   }
 
-  disconnectedCallback() {// метод при удалении элемента
+  disconnectedCallback() {// браузерный метод вызываемый при удалении элемента из дом дерева на странице
     this.componentWillUnmount();
   }
 
