@@ -1,45 +1,45 @@
-// import { Component } from "../../core/Component";
-// import { eventEmitter } from "../../core/EventEmitter";
-// import template from "./create-board-form.template.hbs";
+import { Component } from "../../core/Component";
+import { eventEmitter } from "../../core/EventEmitter";
+import template from "./create-board-form.template.hbs";
 
-// export class CreateBoardForm extends Component {
-//   constructor() {
-//     super();
+export class CreateBoardForm extends Component {
+  constructor() {
+    super();
 
-//     this.state = {
-//       error: {
-//         name: "",
-//         description: "",
-//       },
-//     };
-//     this.template = template();
-//   }
+    this.state = {
+      error: {
+        name: "",
+        description: "",
+      },
+    };
+    this.template = template();
+  }
 
-//   validator = ({ target }) => {
-//     if (target.value === "") {
-//       this.setState({
-//         ...this.state,
-//         error: {
-//           ...this.state.error,
-//           [target.name]: "empty",
-//         },
-//       });
-//       eventEmitter.emit("form:error", {
-//         error: {
-//           ...this.state.error,
-//           [target.name]: "empty",
-//         },
-//       });
-//     }
-//   };
+  validator = ({ target }) => {
+    if (target.value === "") {
+      this.setState({
+        ...this.state,
+        error: {
+          ...this.state.error,
+          [target.name]: "empty",
+        },
+      });
+      eventEmitter.emit("form:error", {
+        error: {
+          ...this.state.error,
+          [target.name]: "empty",
+        },
+      });
+    }
+  };
 
-//   componentDidMount() {
-//     this.addEventListener("change", this.validator);
-//   }
+  componentDidMount() {
+    this.addEventListener("change", this.validator);
+  }
 
-//   componentWillUnmount() {
-//     this.removeEventListener("change", this.validator);
-//   }
-// }
+  componentWillUnmount() {
+    this.removeEventListener("change", this.validator);
+  }
+}
 
-// customElements.define("ui-create-board-form", CreateBoardForm);
+customElements.define("ui-create-board-form", CreateBoardForm);

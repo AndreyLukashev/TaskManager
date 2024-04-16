@@ -1,4 +1,4 @@
-import Handlebars, { compile } from "handlebars";
+import Handlebars from "handlebars";
 
 export class Component extends HTMLElement {
   constructor() {
@@ -8,10 +8,10 @@ export class Component extends HTMLElement {
     this.template = null;
   }
 
-//   setState(state) {
-//     this.state = state;
-//     this.compile();
-//   }
+  setState(state) {
+    this.state = state;
+    this.compile();
+  }
 
   compile() {
     const template = Handlebars.compile(this.template);
@@ -21,15 +21,13 @@ export class Component extends HTMLElement {
 
   connectedCallback() {
     this.compile();
-//     this.componentDidMount()
+    this.componentDidMount()
   }
 
-//   disconnectedCallback() {
-//     this.componentWillUnmount();
-//   }
+  disconnectedCallback() {
+    this.componentWillUnmount();
+  }
 
-//   componentDidMount() {}
-//   componentWillUnmount() {}
+  componentDidMount() {}
+  componentWillUnmount() {}
 }
-
-
