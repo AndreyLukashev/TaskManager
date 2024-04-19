@@ -56,6 +56,10 @@ export class Dashboard extends Component {
     useModal({
       isOpen: true,
       template: "ui-create-board-form",
+      data: {
+        title: "Board #1",
+        description: "Some Description",
+      },
       onSuccess: (modal) => {
         const form = modal.querySelector(".create-board-form");
         const formData = extractFormData(form);
@@ -141,7 +145,6 @@ export class Dashboard extends Component {
     const logoutBtn = target.closest(".logout-btn");
     const createBoardBtn = target.closest(".create-board");
     const deleteBoardBtn = target.closest(".delete-board");
-    const transFinancePage = target.closest(".finance-btn");
 
     if (deleteBoardBtn) {
       return this.openDeleteBoardModal({
@@ -161,11 +164,6 @@ export class Dashboard extends Component {
     if (boardItem) {
       return useNavigate(`${ROUTES.board}/${boardItem.dataset.id}`);
     }
-
-    if (transFinancePage) {
-      return useNavigate(`${ROUTES.finance}`);
-    }
-
   };
 
   setUser() {
